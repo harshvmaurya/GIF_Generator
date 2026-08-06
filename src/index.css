@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { margin: 0; min-width: 320px; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  button, input { font: inherit; }
+}
+
+@layer components {
+  .bg-grid { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 38px 38px; mask-image: linear-gradient(to bottom, black, transparent 90%); }
+  .generator-card { display: flex; min-height: 480px; flex-direction: column; border-radius: 24px; border-width: 1px; background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.035)); padding: 24px; box-shadow: 0 24px 60px rgba(0,0,0,.25); backdrop-filter: blur(16px); }
+  .eyebrow { font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #c4b5fd; }
+  .gif-stage { display: grid; min-height: 235px; flex: 1; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.08); border-radius: 16px; background: rgba(3,5,15,.45); }
+  .gif-stage img { height: 100%; max-height: 315px; width: 100%; object-fit: contain; }
+  .empty-state { display: grid; place-items: center; gap: .55rem; color: #64748b; font-size: .875rem; text-align: center; }
+  .empty-state span { display: grid; height: 48px; width: 48px; place-items: center; border-radius: 14px; background: rgba(148,163,184,.08); color: #c4b5fd; font-size: 1.35rem; }
+  .primary-button { display: flex; width: 100%; cursor: pointer; align-items: center; justify-content: space-between; border: 1px solid rgba(196,181,253,.32); border-radius: 12px; background: linear-gradient(110deg, #7c3aed, #a855f7); padding: .82rem 1rem; color: white; font-size: .9rem; font-weight: 700; transition: transform .2s, box-shadow .2s, opacity .2s; box-shadow: 0 10px 24px rgba(124,58,237,.2); }
+  .primary-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(124,58,237,.34); }
+  .primary-button:focus-visible, .tag-input:focus-visible { outline: 2px solid #e879f9; outline-offset: 3px; }
+  .primary-button:disabled { cursor: wait; opacity: .65; }
+  .secondary-button { background: linear-gradient(110deg, #a21caf, #db2777); border-color: rgba(251,207,232,.3); box-shadow: 0 10px 24px rgba(219,39,119,.18); }
+  .secondary-button:hover:not(:disabled) { box-shadow: 0 14px 30px rgba(219,39,119,.32); }
+  .gif-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1rem; }
+  .action-button { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: .5rem; cursor: pointer; border: 1px solid rgba(255,255,255,.13); border-radius: 12px; background: rgba(255,255,255,.05); color: #e2e8f0; font-size: .82rem; font-weight: 700; transition: border-color .2s, background .2s, transform .2s; }
+  .action-button:hover { transform: translateY(-1px); border-color: rgba(216,180,254,.48); background: rgba(139,92,246,.16); }
+  .action-button:focus-visible { outline: 2px solid #e879f9; outline-offset: 3px; }
+  .tag-input { width: 100%; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: rgba(2,6,23,.54); padding: .82rem 4rem .82rem 1rem; color: #f8fafc; font-size: .9rem; transition: border-color .2s, background .2s; }
+  .tag-input::placeholder { color: #64748b; }
+  .tag-input:hover { border-color: rgba(255,255,255,.24); }
+}
+
+.loader { width: 42px; height: 42px; border: 3px solid rgba(196,181,253,.2); border-bottom-color: #e879f9; border-radius: 50%; animation: rotation .8s linear infinite; }
+@keyframes rotation { to { transform: rotate(360deg); } }
